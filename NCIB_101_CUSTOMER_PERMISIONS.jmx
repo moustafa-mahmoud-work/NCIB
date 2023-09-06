@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.5">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Environment " enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="channelCode" elementType="Argument">
+            <stringProp name="Argument.name">channelCode</stringProp>
+            <stringProp name="Argument.value">SMEW</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="server" elementType="Argument">
+            <stringProp name="Argument.name">server</stringProp>
+            <stringProp name="Argument.value">cib-demo.apps.ocpnonprod-adc.me.alinma.internal</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="path" elementType="Argument">
+            <stringProp name="Argument.name">path</stringProp>
+            <stringProp name="Argument.value">/utils/v1/esb-simulator</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="port" elementType="Argument">
+            <stringProp name="Argument.name">port</stringProp>
+            <stringProp name="Argument.value"></stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="queuePrefix" elementType="Argument">
+            <stringProp name="Argument.name">queuePrefix</stringProp>
+            <stringProp name="Argument.value">SME</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="terminalId" elementType="Argument">
+            <stringProp name="Argument.name">terminalId</stringProp>
+            <stringProp name="Argument.value">0:0:0:0:0:0:0:1</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="LangPref" elementType="Argument">
+            <stringProp name="Argument.name">LangPref</stringProp>
+            <stringProp name="Argument.value">En</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="maxConnection" elementType="Argument">
+            <stringProp name="Argument.name">maxConnection</stringProp>
+            <stringProp name="Argument.value">10</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="maxWaitTime" elementType="Argument">
+            <stringProp name="Argument.name">maxWaitTime</stringProp>
+            <stringProp name="Argument.value">10000</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="db_url" elementType="Argument">
+            <stringProp name="Argument.name">db_url</stringProp>
+            <stringProp name="Argument.value">jdbc:oracle:thin:@//10.0.28.123:1723/CBUAT</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="db_user" elementType="Argument">
+            <stringProp name="Argument.name">db_user</stringProp>
+            <stringProp name="Argument.value">cbsit</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="limitResultSet" elementType="Argument">
+            <stringProp name="Argument.name">limitResultSet</stringProp>
+            <stringProp name="Argument.value">10000</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="mode" elementType="Argument">
+            <stringProp name="Argument.name">mode</stringProp>
+            <stringProp name="Argument.value">dynamic</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="db_url_mcr" elementType="Argument">
+            <stringProp name="Argument.name">db_url_mcr</stringProp>
+            <stringProp name="Argument.value">jdbc:oracle:thin:@//10.0.28.130:1534/MCRSIT</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="db_user_mcr" elementType="Argument">
+            <stringProp name="Argument.name">db_user_mcr</stringProp>
+            <stringProp name="Argument.value">mcr</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="shared_report_path" elementType="Argument">
+            <stringProp name="Argument.name">shared_report_path</stringProp>
+            <stringProp name="Argument.value">\\portal@SSL\DavWWWRoot\CIB\Shared Documents\Migration\testing\jmeter\NCIB_Test_JMeter</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="report_path" elementType="Argument">
+            <stringProp name="Argument.name">report_path</stringProp>
+            <stringProp name="Argument.value">C:/Shared/NCIB_test_results</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="db_info" enabled="true">
+        <boolProp name="autocommit">true</boolProp>
+        <stringProp name="checkQuery"></stringProp>
+        <stringProp name="connectionAge">5000</stringProp>
+        <stringProp name="connectionProperties"></stringProp>
+        <stringProp name="dataSource">db_conn</stringProp>
+        <stringProp name="dbUrl">${db_url}</stringProp>
+        <stringProp name="driver">oracle.jdbc.OracleDriver</stringProp>
+        <stringProp name="initQuery"></stringProp>
+        <boolProp name="keepAlive">true</boolProp>
+        <stringProp name="password">cbsit_321</stringProp>
+        <stringProp name="poolMax">${maxConnection}</stringProp>
+        <boolProp name="preinit">false</boolProp>
+        <stringProp name="timeout">${maxWaitTime}</stringProp>
+        <stringProp name="transactionIsolation">DEFAULT</stringProp>
+        <stringProp name="trimInterval">60000</stringProp>
+        <stringProp name="username">${db_user}</stringProp>
+      </JDBCDataSource>
+      <hashTree/>
+      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="db_info_mcr" enabled="true">
+        <boolProp name="autocommit">true</boolProp>
+        <stringProp name="checkQuery"></stringProp>
+        <stringProp name="connectionAge">5000</stringProp>
+        <stringProp name="connectionProperties"></stringProp>
+        <stringProp name="dataSource">db_conn_mcr</stringProp>
+        <stringProp name="dbUrl">${db_url_mcr}</stringProp>
+        <stringProp name="driver">oracle.jdbc.OracleDriver</stringProp>
+        <stringProp name="initQuery"></stringProp>
+        <boolProp name="keepAlive">true</boolProp>
+        <stringProp name="password">appsiuxp$ss</stringProp>
+        <stringProp name="poolMax">${maxConnection}</stringProp>
+        <boolProp name="preinit">false</boolProp>
+        <stringProp name="timeout">${maxWaitTime}</stringProp>
+        <stringProp name="transactionIsolation">DEFAULT</stringProp>
+        <stringProp name="trimInterval">60000</stringProp>
+        <stringProp name="username">${db_user_mcr}</stringProp>
+      </JDBCDataSource>
+      <hashTree/>
+      <JDBCPreProcessor guiclass="TestBeanGUI" testclass="JDBCPreProcessor" testname="MCR Permission PreProcessor" enabled="true">
+        <stringProp name="dataSource">db_conn_mcr</stringProp>
+        <stringProp name="query">SELECT CIB_PERMISSION_NAME, FUNCTION_ID AS Permission_Id  FROM CORP_PERMISSION_DEFAULT_PROFILE</stringProp>
+        <stringProp name="queryArguments"></stringProp>
+        <stringProp name="queryArgumentsTypes"></stringProp>
+        <stringProp name="queryTimeout">0</stringProp>
+        <stringProp name="queryType">Select Statement</stringProp>
+        <stringProp name="resultSetHandler">Store as String</stringProp>
+        <stringProp name="resultSetMaxRows"></stringProp>
+        <stringProp name="resultVariable">permissionResultSetVariable</stringProp>
+        <stringProp name="variableNames"></stringProp>
+      </JDBCPreProcessor>
+      <hashTree/>
+      <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="common functions" enabled="true">
+        <stringProp name="scriptLanguage">groovy</stringProp>
+        <stringProp name="parameters"></stringProp>
+        <stringProp name="filename"></stringProp>
+        <stringProp name="cacheKey">true</stringProp>
+        <stringProp name="script">//********************************************************************************************
+def prepareRequest(String service, String function){ 
+	def requestId = org.apache.commons.lang3.RandomUtils.nextInt(0, 1000000000)+&quot;&quot;
+	vars.put(&quot;random_id&quot;,requestId)
+	vars.put(&quot;messages_req_id&quot;,&quot;Request Id = &quot;+vars.get(&quot;channelCode&quot;)+requestId+&quot;\r\n&quot;) 
+	vars.put(&quot;service_name&quot;,service)
+	vars.put(&quot;functionId&quot;,function)
+	log.info(&quot;End.prepareRequest service=${service} function=${function}&quot;) 
+	}
+	props.put(&quot;prepareRequest&quot;,this.&amp;prepareRequest)
+//********************************************************************************************
+def prepareRequestId(){ 
+	def requestId = org.apache.commons.lang3.RandomUtils.nextInt(0, 1000000000)+&quot;&quot;
+	vars.put(&quot;random_id&quot;,requestId)
+	vars.put(&quot;messages_req_id&quot;,&quot;Request Id = &quot;+vars.get(&quot;channelCode&quot;)+requestId+&quot;\r\n&quot;) 
+	}
+	props.put(&quot;prepareRequest&quot;,this.&amp;prepareRequest)
+//********************************************************************************************
+def printAssertions(String messages){ 
+	if(messages){
+			messages = messages.trim()
+			if (messages.size() &gt; 1) {
+				messages = vars.get(&apos;messages_req_id&apos;) +messages
+			    vars.put(&quot;ErrorMessages&quot;, messages)
+			}
+		}
+	}
+	props.put(&quot;printAssertions&quot;,this.&amp;printAssertions)
+//********************************************************************************************
+def findFuncAccess(response, permissionId, approvalReq, enabled) {
+    return response.Body.FuncsAccessList.FuncAccess.find {
+        def itFuncGrpId = it.FuncGrpId.text()
+        def itFuncId = it.FuncId.text()
+        def itAcctNum = it.AcctNum.text()
+        def itApprovalReq = it.ApprovalReq.text()
+        def itEnabled = it.Enabled.text()
+
+        ( (itFuncGrpId == permissionId.toString() &amp;&amp; itFuncId == &quot;GLBL&quot;) || itFuncId == permissionId.toString() ) 
+&amp;&amp; itAcctNum == &quot;GLBL&quot; 
+&amp;&amp; ( (itApprovalReq == approvalReq ) || (  approvalReq == null ))
+&amp;&amp; itEnabled == enabled
+    }
+}
+props.put(&quot;findFuncAccess&quot;,this.&amp;findFuncAccess)
+//********************************************************************************************</stringProp>
+      </JSR223PreProcessor>
+      <hashTree/>
+      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="setUp Test Paln" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </SetupThreadGroup>
+      <hashTree>
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Prepare NCIB Test" enabled="true">
+          <stringProp name="scriptLanguage">groovy</stringProp>
+          <stringProp name="parameters"></stringProp>
+          <stringProp name="filename"></stringProp>
+          <stringProp name="cacheKey">true</stringProp>
+          <stringProp name="script">import org.apache.jmeter.services.FileServer
+import java.text.SimpleDateFormat
+String jmxFilePath = FileServer.getFileServer().getBaseDir()
+props.put(&apos;jmxFileDirectory&apos;, jmxFilePath);
+
+// Get current date and time in the format yyyyMMddHHmmss666
+SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyMdHms&quot;);
+String currentDateTime = sdf.format(new Date());
+// Convert to long decimal
+long decimalNumber = Long.parseLong(currentDateTime);
+// Convert decimal to hexadecimal
+String hexString = Long.toHexString(decimalNumber).toUpperCase();
+// Store hexadecimal string into a variable for later use
+props.put(&apos;reportPathProps&apos;, vars.get(&quot;shared_report_path&quot;)+&quot;\\&quot;+decimalNumber+&quot;_&quot;)
+log.info(&quot;PATH==&quot;+props.get(&apos;reportPathProps&apos;))
+
+//props.put(&apos;summaryReportName&apos;,&quot;NCIB_Test_Summary_&quot;+hexString+&apos;.csv&apos;)
+props.put(&apos;summaryReportName&apos;,vars.get(&quot;shared_report_path&quot;) + &quot;\\ncib_test_summary_&quot;+decimalNumber+&quot;.csv&quot;)
+
+</stringProp>
+        </JSR223Sampler>
+        <hashTree/>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="CORP_PERMISSION_DEFAULT_PROFILE Request" enabled="true">
+          <stringProp name="dataSource">db_conn_mcr</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query"> SELECT CIB_PERMISSION_NAME, FUNCTION_ID FROM CORP_PERMISSION_DEFAULT_PROFILE WHERE CIB_PERMISSION_NAME IS NOT NULL</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable">CORP_PERMISSION_DEFAULT_PROFILE</stringProp>
+          <stringProp name="queryTimeout">0</stringProp>
+          <stringProp name="resultSetMaxRows">${limitResultSet}</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="MAPPING DB  PostProcessor" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import groovy.json.JsonOutput
+
+
+
+def listOfMaps = vars.getObject(&quot;CORP_PERMISSION_DEFAULT_PROFILE&quot;) 
+
+def permissionMap = [:]
+
+listOfMaps.each{
+    map -&gt;
+    def permissionId = map[&apos;FUNCTION_ID&apos;]
+    def permissionName = map[&apos;CIB_PERMISSION_NAME&apos;]
+    //log.info(permissionName+&quot;-&quot;+ permissionId)
+    if (permissionName != null) {
+    		if (!permissionMap.containsKey(permissionName)) {
+        		permissionMap[permissionName] = []
+		}
+		permissionMap[permissionName] &lt;&lt; permissionId
+    	}
+ }
+
+props.put(&quot;permissionMap&quot;, permissionMap)
+
+def serializedListOfMaps = JsonOutput.toJson(listOfMaps)
+props.put(&quot;mySerializedListOfMaps&quot;, serializedListOfMaps)
+
+
+</stringProp>
+          </JSR223PostProcessor>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Sprint 3" enabled="true"/>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="NCIB_101_CUSTOMER_PERMISIONS" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="${db_view} Source DB Request" enabled="true">
+          <stringProp name="TestPlan.serialize_threadgroups">false</stringProp>
+          <elementProp name="Arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="Argument">
+                <stringProp name="Argument.name"></stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="dataSource">db_conn</stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="query">SELECT CIB_VIEW.* , white_list.SERVICE_PACKAGE_ID FROM ${db_view} cib_view ,NCIB_CUSTOMER_WHITELIST white_list where cib_view.CUSTOMER_CIF = white_list.CIF 
+</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="variableNames"></stringProp>
+          <stringProp name="resultVariable">resultSetVariable</stringProp>
+          <stringProp name="queryTimeout">0</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="queryFile"></stringProp>
+          <boolProp name="queryArgumentsAreRegex">false</boolProp>
+          <boolProp name="queryArgumentsAreXPath">false</boolProp>
+          <stringProp name="dataSourceExpression"></stringProp>
+          <stringProp name="poolMax">10</stringProp>
+          <stringProp name="timeout">10000</stringProp>
+          <stringProp name="trimInterval">60000</stringProp>
+          <stringProp name="autocommit">true</stringProp>
+          <boolProp name="keepAlive">false</boolProp>
+          <stringProp name="connectionAge">5000</stringProp>
+          <stringProp name="checkQuery">yes</stringProp>
+          <stringProp name="resultSetMaxRows">${limitResultSet}</stringProp>
+        </JDBCSampler>
+        <hashTree>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="DB PreProcessor" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script"> vars.put(&quot;db_view&quot;,org.apache.jmeter.threads.JMeterContextService.getContext().getThreadGroup().getName())</stringProp>
+          </JSR223PreProcessor>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="DB Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1076067137">CUSTOMER_CIF</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+            <stringProp name="Assertion.scope">all</stringProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="${db_view} PostProcessor" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import groovy.json.JsonOutput
+def listOfMaps = vars.getObject(&quot;resultSetVariable&quot;)
+log.info(&quot;data from db:&quot;+listOfMaps.toString())
+def resultMap = [:]
+listOfMaps.eachWithIndex{	
+	map, index -&gt;  
+	def cif = map[&apos;CUSTOMER_CIF&apos;]  
+	def objectId = map[&apos;PERMISSION_NAME&apos;]  
+	if (!resultMap.containsKey(cif)) {    
+	  resultMap[cif] = []      
+	def variableName = &quot;vars_db_cifs_${index + 1}&quot;      
+	if (!vars.get(variableName))
+	{	    vars.put(variableName, cif)	  }  
+	  
+	} 
+	 
+	resultMap[cif] &lt;&lt; objectId
+}
+log.info(&quot;modified data:&quot;+resultMap.toString())
+log.info(&quot;modified data keys:&quot;+resultMap.keySet().toArray().toString())
+log.info(&quot;TESTTEST2&quot;)
+
+
+
+
+
+
+props.put(&quot;db_rs&quot;, resultMap)
+props.put(&quot;db_cifs&quot;, resultMap.keySet().toArray())
+
+
+</stringProp>
+          </JSR223PostProcessor>
+          <hashTree/>
+        </hashTree>
+        <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="ForEach USER in CIB Database" enabled="true">
+          <stringProp name="ForeachController.inputVal">vars_db_cifs</stringProp>
+          <stringProp name="ForeachController.returnVal">current</stringProp>
+          <boolProp name="ForeachController.useSeparator">true</boolProp>
+        </ForeachController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="${service_name} Integration Service Call" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">&lt;${service_name}InqRq&gt;&#xd;
+  &lt;MsgRqHdr&gt;&#xd;
+    &lt;RqUID&gt;${channelCode}${random_id}&lt;/RqUID&gt;&#xd;
+    &lt;SCId&gt;${channelCode}&lt;/SCId&gt;&#xd;
+    &lt;FuncId&gt;${functionId}&lt;/FuncId&gt;&#xd;
+    &lt;CustLangPref&gt;${LangPref}&lt;/CustLangPref&gt;&#xd;
+    &lt;CustId&gt;&#xd;
+      &lt;CIF&gt;${current}&lt;/CIF&gt;&#xd;
+    &lt;/CustId&gt;&#xd;
+  &lt;/MsgRqHdr&gt;&#xd;
+&#xd;
+  &lt;Body&gt;&#xd;
+  	&lt;CIF&gt;${current}&lt;/CIF&gt;&#xd;
+  &lt;/Body&gt;&#xd;
+ &lt;/${service_name}InqRq&gt;</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port">${port}</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${path}?channelCode=${channelCode}&amp;requestQueue=${queuePrefix}.${service_name}InqRq&amp;responseQueue=${queuePrefix}.${service_name}InqRs</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="SampleStaticData" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="sampleXMLResponse" elementType="Argument">
+                  <stringProp name="Argument.name">sampleXMLResponse</stringProp>
+                  <stringProp name="Argument.value">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;UsrPermissionsInqRs&gt;     &lt;MsgRsHdr&gt;         &lt;StatusCode&gt;I000000&lt;/StatusCode&gt;         &lt;RqUID&gt;SMEW230410aertyuio56&lt;/RqUID&gt;     &lt;/MsgRsHdr&gt;     &lt;Body&gt;         &lt;RecCtrlOut&gt;             &lt;SentRecs&gt;2&lt;/SentRecs&gt;         &lt;/RecCtrlOut&gt;         &lt;NameEn&gt;user1&lt;/NameEn&gt;         &lt;NameAr&gt;user-mish-1&lt;/NameAr&gt;         &lt;FuncsAccessList&gt;             &lt;FuncAccess&gt;                 &lt;AcctNum&gt;41400001250000&lt;/AcctNum&gt;                 &lt;Enabled&gt;N&lt;/Enabled&gt;             &lt;/FuncAccess&gt;             &lt;FuncAccess&gt;                 &lt;AcctNum&gt;68200001250000&lt;/AcctNum&gt;                 &lt;Enabled&gt;Y&lt;/Enabled&gt;             &lt;/FuncAccess&gt;         &lt;/FuncsAccessList&gt;     &lt;/Body&gt; &lt;/UsrPermissionsInqRs&gt;</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+            <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="Prepare Integration Call" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">props.get(&quot;prepareRequest&quot;)(&quot;CustPermissions&quot;,&quot;10260000&quot;)
+
+</stringProp>
+            </JSR223PreProcessor>
+            <hashTree/>
+            <XPathAssertion guiclass="XPathAssertionGui" testclass="XPathAssertion" testname="Assert Integration Service Call was Successful" enabled="true">
+              <boolProp name="XPath.negate">false</boolProp>
+              <stringProp name="XPath.xpath">//StatusCode[text() = &apos;I000000&apos;]</stringProp>
+              <boolProp name="XPath.validate">false</boolProp>
+              <boolProp name="XPath.whitespace">false</boolProp>
+              <boolProp name="XPath.tolerant">false</boolProp>
+              <boolProp name="XPath.namespace">false</boolProp>
+            </XPathAssertion>
+            <hashTree/>
+            <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="Integration Service  PostProcessor" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">
+def httpResponse  = &quot;&quot;
+
+if(&quot;static&quot; == vars.get(&quot;mode&quot;)){
+	httpResponse  = vars.get(&quot;sampleXMLResponse&quot;)
+} else {
+	httpResponse  = prev.getResponseDataAsString().trim().replaceFirst(&apos;^([\\W]+)&lt;&apos;,&apos;&lt;&apos;)
+}
+
+
+vars.put(&quot;ServiceResponse_&quot; + vars.get(&quot;service_name&quot;) + &quot;_&quot; + vars.get(&quot;current&quot;), httpResponse)
+
+
+
+
+
+
+</stringProp>
+            </JSR223PostProcessor>
+            <hashTree/>
+          </hashTree>
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Data Verification Sample for ${service_name} CIF=${current}" enabled="true">
+            <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="script">import groovy.util.XmlSlurper 
+
+log.info(&quot;************************Data Verification***************************&quot;)
+
+def httpResponse = vars.get(&quot;ServiceResponse_&quot; + vars.get(&quot;service_name&quot;) + &quot;_&quot; + vars.get(&quot;current&quot;)) 
+def response = new XmlSlurper().parseText(httpResponse)
+def permissionMap = vars.getObject(&quot;permissionFunctionMap&quot;)
+def dbResult = props.get(&quot;db_rs&quot;)
+def messages =  &quot;&quot;
+
+
+    def cif = vars.get(&quot;current&quot;)
+   
+    def permissionNames = dbResult[cif]
+
+    permissionNames.each { permissionName -&gt;
+       
+        def permissionIdList = permissionMap[permissionName]
+
+        if (!permissionIdList) {
+            messages += &quot;No Function Id found in the database table CORP_PERMISSION_DEFAULT_PROFILE for PERMISSION_NAME=${permissionName}.\n\r&quot;
+            return // Skip further processing for this permissionName
+        }
+
+        try {
+
+        	
+        	 
+            def allFunctionAccessListRestricted = permissionIdList.each { permissionId -&gt;
+             def selectFuncAccess =  props.get(&quot;findFuncAccess&quot;)(response,permissionId , null , &apos;N&apos; )
+            
+               
+if(!selectFuncAccess){
+	if (selectFuncAccess != null &amp;&amp; selectFuncAccess.Enabled.text() != &apos;N&apos;) {
+                   
+                    messages += &quot;Permission is not restricted for USER_ID=${cif} and PERMISSION_NAME=${permissionName} Function ID=${permissionId} with Enabled=N &quot;\n\r&quot;
+                    false
+               
+	}
+
+
+            if (!allFunctionAccessListRestricted) {
+                messages += &quot;Access-Function(s) of PERMISSION_NAME=${permissionName} Function IDs=${permissionIdList} for USER_ID=${cif} are not (all) restricted\n\r&quot;
+            }
+
+        } catch (Exception e) {
+            messages += &quot;Failed to parse XML response. Detailed_Message=[${e.toString()}].\n\r&quot;
+        }
+    }
+
+
+ props.get(&quot;printAssertions&quot;)(messages)
+</stringProp>
+          </JSR223Sampler>
+          <hashTree>
+            <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="Permission Map PreProcessor" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">false</stringProp>
+              <stringProp name="script">import groovy.json.JsonSlurper 
+
+def serializedListOfMaps = props.get(&quot;mySerializedListOfMaps&quot;)
+def listOfMaps = new JsonSlurper().parseText(serializedListOfMaps)
+
+def resultMap = [:]
+
+listOfMaps.each { map -&gt;
+    def permissionNames = map[&apos;CIB_PERMISSION_NAME&apos;].split(&apos;,&apos;)
+
+    permissionNames.each { permissionName -&gt;
+        def functionId = map[&apos;FUNCTION_ID&apos;]
+        
+        if (!resultMap.containsKey(permissionName.trim())) {
+            resultMap[permissionName.trim()] = []
+        }
+        
+        resultMap[permissionName.trim()] &lt;&lt; functionId
+    }
+}
+
+// Store the resultMap in JMeter properties
+vars.putObject(&quot;permissionFunctionMap&quot;, resultMap)
+</stringProp>
+            </JSR223PreProcessor>
+            <hashTree/>
+            <JSR223Assertion guiclass="TestBeanGUI" testclass="JSR223Assertion" testname="Data Verification Assertion for ${service_name} CIF=${current}" enabled="true">
+              <stringProp name="scriptLanguage">groovy</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="cacheKey">true</stringProp>
+              <stringProp name="script">def messages = vars.get(&quot;ErrorMessages&quot;)
+
+
+if(messages !=null &amp;&amp; messages.size()&gt;0)
+	{
+		AssertionResult.setFailure(true)
+		AssertionResult.setFailureMessage(messages)
+		
+	}
+	else{
+		AssertionResult.setFailure(false)
+		
+		}</stringProp>
+            </JSR223Assertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ResultCollector guiclass="AssertionVisualizer" testclass="ResultCollector" testname="Test Results" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>false</time>
+            <latency>false</latency>
+            <timestamp>false</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>false</code>
+            <message>false</message>
+            <threadName>true</threadName>
+            <dataType>false</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>true</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+          </value>
+        </objProp>
+        <stringProp name="filename">${__P(reportPathProps,)}${db_view}+&quot;.csv&quot;</stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">true</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ConfigTestElement guiclass="PropertyControlGui" testclass="ConfigTestElement" testname="session Info" enabled="true"/>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
